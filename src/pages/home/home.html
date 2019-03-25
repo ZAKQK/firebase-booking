@@ -8,11 +8,85 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <!-- <button ion-button secondary menuToggle>Toggle Menu</button> -->
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Full Names</ion-label>
+      <ion-input type="text" [(ngModel)]="details.names"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="details.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Phone</ion-label>
+      <ion-input type="number" [(ngModel)]="details.phone"></ion-input>
+    </ion-item>
+
+    <ion-item padding>
+      <ion-label>Gender</ion-label>
+      <ion-select [(ngModel)]="details.gender">
+        <ion-option value="male">Male</ion-option>
+        <ion-option value="female">Female</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item padding>
+      <ion-label>Travelling for work?</ion-label>
+      <ion-select [(ngModel)]="details.travelling">
+        <ion-option value="yes">Yes</ion-option>
+        <ion-option value="no">No</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item padding>
+      <ion-label>Who are you booking for?</ion-label>
+      <ion-select [(ngModel)]="details.booking">
+        <ion-option value="yes">Myself</ion-option>
+        <ion-option value="no">Someone</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item padding>
+      <ion-label>Adults</ion-label>
+      <ion-select [(ngModel)]="details.adults">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item padding>
+      <ion-label>Children</ion-label>
+      <ion-select [(ngModel)]="details.children">
+        <ion-option value="none">None</ion-option>
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item padding>
+      <ion-label>Room</ion-label>
+      <ion-select [(ngModel)]="details.room">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button clear full (click)="openCalendar()">SELECT DATES</button>
+
 </ion-content>
+
+<ion-footer>
+  <button ion-button full (click)="personalDetails()">Submit</button>
+</ion-footer>
